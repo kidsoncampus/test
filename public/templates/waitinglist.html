@@ -1,0 +1,144 @@
+ <div class="waiting_list">
+        <div>
+            <!-- page header -->
+            <div class="page-header">
+                <h3>Hi {{fName}}, Please fill out the following application form</h3>
+                <small>Santa Clara University Child Development Center</small>
+            </div>
+
+            <form name="userForm">
+
+                <!--today's date-->
+                <div class="form-group">
+
+                    <label class="control-label">Today's Date</label>
+                    <div class="row">
+                            <p class="input-group">
+                                <input type="text" id="date" name="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                            </p>
+                    </div>
+                </div>
+
+                <!--Child Info-->
+                <label >Child Information</label>
+                <!--Child FirstName-->
+                <div class="form-group">
+                    <label class="control-label">First Name</label>
+                    <input type="text" name="chname" class="form-control" ng-model="chFname"
+                       placeholder="Enter your child's First Name" ng-required="true">
+                </div>
+
+                <!--Child LastName-->
+                <div class="form-group">
+                    <label class="control-label">Last Name</label>
+                    <input type="text" name="chname" class="form-control" ng-model="chLname"
+                       placeholder="Enter your child's Last Name" ng-required="true">
+                </div>
+
+                <!--Child Gender-->
+                <div class="form-group">
+                    <label class="control-label">Choose your child gender</label>
+                    <input type="radio" name="gender" ng-model="chGender" value="boy"> Boy
+                    <input type="radio" name="gender" ng-model="chGender" value="girl"> Girl
+                    <input type="radio" name="gender" ng-model="chGender" value="unknown" checked="checked"> Unknown
+                </div>
+
+                <!--Child Birthday-->
+                <div class="form-group">
+
+                    <label class="control-label">Child's Date of Birth</label>
+                    <div class="row">
+                        <p class="input-group">
+                            <input type="text" id="b_date" name="b_date" class="form-control" uib-datepicker-popup ng-model="b_dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </p>
+                    </div>
+                </div>
+
+                <!--Application Program-->
+                <div class="form-group">
+                    <label class="control-label">Which program you want to apply for your child?</label>
+                    <select  name="application" class="form-control" ng-model="program"
+                            ng-options="application.applicationId as application.Name for application in applicationList"
+                            ng-required="true">
+                        <option value=''>Select</option>
+                    </select>
+                </div>
+
+                <!--emergency contact-->
+                <label>Emergency Contact</label>
+
+                <!-- e_FirstName -->
+                <div class="form-group">
+                    <label class="control-label">First Name</label>
+                    <input type="text"  class="form-control" ng-model="eFname" placeholder="Enter emergency contactor's First Name" ng-required="true">
+                </div>
+
+                <!-- e_LastName -->
+                <div class="form-group">
+                    <label class="control-label">Last Name</label>
+                    <input type="text"  class="form-control" ng-model="eLname" placeholder="Enter emergency contactor's Last Name" ng-required="true">
+                </div>
+
+                <!-- e_phone -->
+                <div class="form-group">
+                    <label class="control-label">Phone</label>
+                    <input type="text" class="form-control" ng-model="ePhone" placeholder="Enter phone number" ng-required="true">
+                </div>
+
+                <!-- e_email -->
+                <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <input type="email" class="form-control" ng-model="eEmail" placeholder="Enter email" ng-required="true">
+                </div>
+
+                <!--e_address-->
+                <div class="form-group">
+                    <label class="control-label">Address</label>
+                    <textarea placeholder="" rows="3" class="form-control" ng-model="eAddress" placeholder="" ng-required="true"></textarea>
+                </div>
+
+                <!--perferred date -->
+                <div class="form-group">
+
+                    <label>Perferred Start Date </label>
+                    <div class="row">
+                        <p class="input-group">
+                            <input type="text" id="p_date" name="p_date" class="form-control" uib-datepicker-popup ng-model="p_dt" is-open="popup3.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open3()"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </p>
+                    </div>
+                </div>
+
+
+                <!--priority-->
+                <div class="form-group">
+                    <label class="control-label">Faimly's SCU affiliation (Listed in Order of Admission Priority)</label>
+
+                    <select class="form-control" ng-model="priorityLevel1"
+                            ng-options="x for x in level1List"
+                            ng-required="true">
+                        <option value=''>Select</option>
+                    </select>
+                </div>
+
+
+
+
+
+
+                <div>
+                    <button type="submit" class="btn btn-primary" ng-click="submitForm()">Submit</button>
+                </div>
+
+            </form>
+        </div>
+</div>
+
